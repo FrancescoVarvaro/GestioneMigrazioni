@@ -1,0 +1,33 @@
+Evento (Tempo, Country, Quantità persone)
+es.
+Evento(1, Italia, 1000)
+	500 stanziali in Italia
+	4 confinanti -> 125 persone per stato confinante
+	crea eventi di ingresso
+	
+metto questi eventi in coda, e li estraggo uno per volta	
+Evento (2, Francia, 125)
+	62 stanziali in Francia
+	63 si dividono in 5(spagna, italia, olanda, belgio, germania): 12 x stato, 3 stanziali
+	
+Evento (2, Svizzera, 125)
+	62 stanziali in Svizzera
+	63 si dividono in 4: 15 x stato, 3 stanziali
+	
+Evento (2, Austria, 125) ...
+Evento (2, Slovenia, 125) ...
+Evento (3, Spagna, 12)
+Evento (3, italia, 12) // al T=3 entrano 12 persone che arrivano dalla Francia
+Evento (3, germania, 12)
+Evento (3, belgio, 12)
+Evento (3, olanda, 12)
+
+Evento(3, Francia, 15)
+Evento(3, Italia, 15) // ma anche 15 che arrivano dalla svizzera, sempre a T=3, più altri che arrivano poi dall'austria e slovenia
+Evento(3, Germania, 15)
+Evento(3, Austria, 15)
+
+// se ci sono piu migrazioni che vengono da più stati diversi che insistono sullo stesso stato, allo stesso T, abbiamo 2 alternative
+// 1. ce ne freghiamo e li processiamo per come vengono
+// 2. aspettare i nuovi ingressi fino a quando non arrivano tutti --> tenere da parte (in parziale) i numeri di migranti arrivati
+ 		e solo quando abbiamo terminato il T=3 li smistiamo. 

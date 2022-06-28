@@ -1,41 +1,53 @@
 package it.polito.tdp.borders.model;
 
-public class Evento implements Comparable<Evento> {
-	private int t;
-	private Country country;
-	private int n;
+public class Evento implements Comparable <Evento> {
 	
-	public Evento(int t, Country country, int n) {
+	private int time;
+	private Country nazione;
+	private int persone;
+	
+	
+	public Evento(int time, Country nazione, int persone) {
 		super();
-		this.t = t;
-		this.country = country;
-		this.n = n;
+		this.time = time;
+		this.nazione = nazione;
+		this.persone = persone;
 	}
-	
-	public int getT() {
-		return t;
+
+	public int getTime() {
+		return time;
 	}
-	public void setT(int t) {
-		this.t = t;
+
+
+	public void setTime(int time) {
+		this.time = time;
 	}
-	public Country getCountry() {
-		return country;
+
+	public Country getNazione() {
+		return nazione;
 	}
-	public void setCountry(Country country) {
-		this.country = country;
+
+	public void setNazione(Country nazione) {
+		this.nazione = nazione;
 	}
-	public int getN() {
-		return n;
+
+	public int getPersone() {
+		return persone;
 	}
-	public void setN(int n) {
-		this.n = n;
+
+	public void setPersone(int persone) {
+		this.persone = persone;
 	}
 
 	@Override
 	public int compareTo(Evento o) {
-		return this.t - o.t;
+		// TODO Auto-generated method stub
+		return this.time-o.time;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Event [time=" + time + ", nazione=" + nazione + ", persone=" + persone + "]";
+	}
 	
 }
